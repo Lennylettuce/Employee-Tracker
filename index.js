@@ -17,6 +17,36 @@ const db = mysql.createConnection(
     console.log('connected!')
 );
 
+db.connect(async (err) => {
+    if (err) throw err;
+    console.log('Employee Tracker connected');
+    start();
+});
+
+const start = async () => {
+    try {
+        const userQuestions = await inquirer.prompt([
+            {
+                name: 'options',
+                type: 'list',
+                message: 'Pick an action:',
+                choices: [
+                    'View all departments',
+                    'View all roles',
+                    'View all employees',
+                    'Add department',
+                    'Add a role',
+                    'Add employee',
+                    'Update employee role',
+                    'Exit?'
+                ],
+            }
+        ]);
+        selections(userQuestions.options);
+    } catch (err) {
+        console.log(err);
+    }
+};
 
 
 //View all departments

@@ -1,4 +1,5 @@
 # Employee-Tracker
+[![Watch video](link)](link) update later
 ![License Badge](https://shields.io/badge/license-MIT-blue)
 ## Table of Contents
 1. [Description](#description)
