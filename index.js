@@ -25,7 +25,7 @@ db.connect(async (err) => {
 
 const start = async () => {
     try {
-        const userQuestions = await inquirer.prompt([
+        const questions = await inquirer.prompt([
             {
                 name: 'options',
                 type: 'list',
@@ -38,19 +38,52 @@ const start = async () => {
                     'Add a role',
                     'Add employee',
                     'Update employee role',
-                    'Exit?'
+                    'Exit'
                 ],
             }
         ]);
-        selections(userQuestions.options);
+        choices(questions.options);
     } catch (err) {
         console.log(err);
     }
 };
 
+const choices = async (options) => {
+    if (options === 'View all departments') {
+        viewDepartment();
+    }
+    if (options === 'View all roles') {
+        viewRoles();
+    }
+    if (options === 'View all employees') {
+        viewEmployees();
+    }
+    if (options === 'Add department') {
+        addDepartment();
+    }
+    if (options === 'Add a role') {
+        addRoles();
+    }
+    if (options === 'Add employee') {
+        addEmployee();
+    }
+    if (options === 'Update employee role') {
+        updateEmployee();
+    }
+    if (options === 'Exit') {
+        exit();
+    }
+};
 
 //View all departments
-
+const viewDepartment = () => {
+    const query = 'SELECT * FROM department';
+    db.query(query, (err, department) => {
+        if (err) throw err;
+        console.table(department);
+        start();
+    });
+};
 //View all roles
 
 //View all employees
