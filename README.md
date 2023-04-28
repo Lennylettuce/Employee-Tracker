@@ -8,22 +8,17 @@
 4. [Contributing](#contributing)
 5. [Tests](#tests)
 6. [LIcense](#lIcense)
-7. [Questions](#questions)
+
 
 ## Description
-Description
+This command line application allows users to access employee information from a database and edit the information all from the terminal. 
 ## Installation
-Install
+npm i for packages 
 ## Usage
-Usage
+node index.js to run the program
 ## Contributing
 fork, code, pull req.
 ## Tests
 none
 ## License
 Checkouthttps://mit-license.org/for this project license information.
-## Questions
-Checkout other projects [HERE](https://github.com/undefined) on Github 
-Direct any questions to gmailaddress. 
-
-//edit this later
