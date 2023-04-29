@@ -1,13 +1,14 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 require('console.table');
+require('dotenv').config();
 
 const db = mysql.createConnection(
     {
         host: 'localhost',
         port: 3306,
         user: 'root',
-        password: 'password',
+        password: process.env.PASSWORD,
         database: 'employeetracker_db'
     },
     console.log('connected!')
@@ -86,7 +87,7 @@ const viewDepartment = () => {
 
 const viewRoles = () => {
     const query = `SELECT * FROM role`;
-    connection.query(query, (err, role) => {
+    db.query(query, (err, role) => {
       if (err) throw err;
       console.table(role);
       start();
@@ -97,7 +98,7 @@ const viewRoles = () => {
 
 const viewEmployees = () => {
     const query = `SELECT * FROM employees`;
-    connection.query(query, (err, employees) => {
+    db.query(query, (err, employees) => {
       if (err) throw err;
       console.table(employees);
       start();
@@ -205,7 +206,7 @@ const addEmployee = async () => {
             }
         ]);
         const query = 'INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES(?, ?, ?, ?)';
-        db.query(query, [first, last, role, manager], (err, result) => {
+        db.query(query, [first, last, role, manager], (err, res) => {
             if (err) throw err;
             console.log('New employee added!');
             start();
