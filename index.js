@@ -1,11 +1,6 @@
-const express = require('express');
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-//const PORT = process.envv.PORT | 3001;
-const app = express();
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+require('console.table');
 
 const db = mysql.createConnection(
     {
