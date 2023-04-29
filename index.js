@@ -5,8 +5,9 @@ require('console.table');
 const db = mysql.createConnection(
     {
         host: 'localhost',
+        port: 3306,
         user: 'root',
-        password: '',
+        password: 'password',
         database: 'employeetracker_db'
     },
     console.log('connected!')
@@ -118,6 +119,7 @@ const addDepartment = async () => {
         console.log('New department added!');
     } catch (err) {
         console.log(err);
+        db.end();
     }
 };
 
@@ -155,6 +157,7 @@ const addRoles = async () => {
         });
     } catch (err) {
         console.log(err);
+        db.end();
     }
 };
 
@@ -209,6 +212,7 @@ const addEmployee = async () => {
         });
     } catch (err) {
         console.log(err);
+        db.end();
     }
 };
 
@@ -251,6 +255,7 @@ const updateEmployee = async () => {
             })
         } catch (err) {
             console.log(err);
+            db.end();
         }
     })
 };
