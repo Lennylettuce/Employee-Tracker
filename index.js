@@ -34,8 +34,7 @@ const start = async () => {
                     'Add department',
                     'Add a role',
                     'Add employee',
-                    'Update employee role',
-                    'Exit'
+                    'Update employee role'
                 ],
             }
         ]);
@@ -66,9 +65,6 @@ const choices = async (options) => {
     }
     if (options === 'Update employee role') {
         updateEmployee();
-    }
-    if (options === 'Exit') {
-        exit();
     }
 };
 
