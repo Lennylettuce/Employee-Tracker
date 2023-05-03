@@ -1,5 +1,5 @@
 # Employee-Tracker
-[![Watch video](link)](link) update later
+[![Watch video](https://drive.google.com/file/d/1wgtdqBOWfZaAcrZuJjWzM7mukVQ6cwla/view)](https://drive.google.com/file/d/1wgtdqBOWfZaAcrZuJjWzM7mukVQ6cwla/view)
 ![License Badge](https://shields.io/badge/license-MIT-blue)
 ## Table of Contents
 1. [Description](#description)
